@@ -1,9 +1,12 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
+
 import java.util.Objects;
 
-
+//holds the fields and methods that are common across the Job class and the classes it contains as fields
+@MappedSuperclass
 public abstract class AbstractEntity {
+
 
     private int id;
 
