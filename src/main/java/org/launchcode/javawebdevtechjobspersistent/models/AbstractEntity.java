@@ -1,15 +1,23 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 //holds the fields and methods that are common across the Job class and the classes it contains as fields
 @MappedSuperclass
 public abstract class AbstractEntity {
 
-
+    @Id
+    @GeneratedValue
     private int id;
 
+    @NotBlank
+    @Size(min = 3, max = 250, message = "Name must be between 3 and 250 characters. Please try again")
     private String name;
 
     public int getId() {
